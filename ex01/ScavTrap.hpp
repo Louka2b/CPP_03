@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: louka <louka@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/01 00:00:00 by copilot          #+#    #+#             */
-/*   Updated: 2026/09/01 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/09/01 00:00:00 by ldeplace          #+#    #+#             */
+/*   Updated: 2026/09/02 12:47:57 by louka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class ScavTrap : public ClapTrap
 		ScavTrap& operator=(const ScavTrap& other);
 		~ScavTrap();
 
+		void attack(const std::string& target);
 		void guardGate();
 };
 

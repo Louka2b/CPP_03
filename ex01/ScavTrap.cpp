@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: louka <louka@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/01 00:00:00 by copilot          #+#    #+#             */
-/*   Updated: 2026/09/01 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/09/01 00:00:00 by louka	           #+#    #+#             */
+/*   Updated: 2026/09/02 12:47:39 by louka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,23 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor called for " << this->_name << std::endl;
+}
+
+void ScavTrap::attack(const std::string& target)
+{
+	if (this->_hitPoints == 0)
+	{
+		std::cout << "ScavTrap " << this->_name << " cannot attack because it is destroyed!" << std::endl;
+		return;
+	}
+	if (this->_energyPoints == 0)
+	{
+		std::cout << "ScavTrap " << this->_name << " has no energy left to attack!" << std::endl;
+		return;
+	}
+	this->_energyPoints--;
+	std::cout << "ScavTrap " << this->_name << " attacks " << target
+			  << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
 }
 
 void ScavTrap::guardGate()
